@@ -16,7 +16,7 @@ class _ThirdHomeState extends State<ThirdHome> {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
-          "HOME",
+          "Menu",
           style: TextStyle(color: Colors.blue[400]),
         ),
         centerTitle: true,
