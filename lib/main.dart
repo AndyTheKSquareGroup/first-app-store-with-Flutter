@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:thirdactivity/screen/1login.dart';
-// import 'package:fifthactivity/screens/list.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: LoginScreen(),
     );
   }

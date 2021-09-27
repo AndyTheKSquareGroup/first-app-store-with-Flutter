@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class FourthEditAddress extends StatefulWidget {
-  const FourthEditAddress({Key? key}) : super(key: key);
+class FifthAddAddress extends StatefulWidget {
+  const FifthAddAddress({Key? key}) : super(key: key);
   @override
-  _FourthEditAddressState createState() => _FourthEditAddressState();
+  _FifthAddAddressState createState() => _FifthAddAddressState();
 }
 
-class _FourthEditAddressState extends State<FourthEditAddress> {
+class _FifthAddAddressState extends State<FifthAddAddress> {
   TextEditingController _tagPlace = TextEditingController(text: "Office");
   TextEditingController _namePlace =
       TextEditingController(text: "The Ksquare Group");
@@ -23,15 +23,9 @@ class _FourthEditAddressState extends State<FourthEditAddress> {
         backgroundColor: Colors.blue[400],
         elevation: 0,
         title: Text(
-          "Edit Address",
+          "Add Address",
           // style: TextStyle(color: Colors.blue[400]),
         ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.delete),
-          ),
-        ],
         centerTitle: false,
       ),
       body: ListView(

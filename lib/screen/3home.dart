@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
+import 'package:get/get.dart';
+import 'package:thirdactivity/screen/3modelHome.dart';
+import 'package:thirdactivity/screen/4cart.dart';
+import 'package:thirdactivity/screen/5account.dart';
 
 class ThirdHome extends StatefulWidget {
   const ThirdHome({Key? key}) : super(key: key);
@@ -8,18 +11,39 @@ class ThirdHome extends StatefulWidget {
 }
 
 class _ThirdHomeState extends State<ThirdHome> {
+  var _selectedIndex = 0;
+  List<Widget> _widgetNavBar = <Widget>[
+    ThirdHomeModel(),
+    FourthCartScreen(),
+    FifthAccountScreen()
+  ];
+  void _tapNavBar(var index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
         backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text(
-          "Menu",
-          style: TextStyle(color: Colors.blue[400]),
+        body: Container(
+          child: _widgetNavBar.elementAt(_selectedIndex),
         ),
-        centerTitle: true,
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _tapNavBar,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined), label: "Home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_bag_outlined), label: "Cart"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_box_outlined), label: "Account")
+          ],
+        ),
       ),
     );
   }

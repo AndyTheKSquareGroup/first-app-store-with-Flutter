@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:thirdactivity/screen/2signup.dart';
 import 'package:thirdactivity/screen/3home.dart';
-// import 'package:thirdactivity/screen/2signup.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -11,71 +10,95 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _nameCtrl = TextEditingController();
+  TextEditingController _emailCtrl = TextEditingController();
+  TextEditingController _passwordCtrl = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Material App",
+      home: Scaffold(
         backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text(
-          "Andyu´s Shop",
-          style: TextStyle(color: Colors.blue[400]),
+        appBar: AppBar(
+          backgroundColor: Colors.blue[400],
+          elevation: 0,
+          title: Text(
+            "Andyu´s Shop",
+            // style: TextStyle(color: Colors.blue[400]),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        body: ListView(
           children: [
-            Icon(
-              Icons.shopping_bag_outlined,
-              size: 150,
-              color: Colors.blue[400],
-            ),
             Container(
-              child: Text(
-                "Andyu´s Shop",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Container(
-              // padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(15),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    child: TextField(
-                      controller: _nameCtrl,
-                      obscureText: true,
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                      ),
+                    child: Icon(
+                      Icons.shopping_bag_outlined,
+                      size: 150,
+                      color: Colors.blue[400],
                     ),
                   ),
                   Container(
-                    child: TextField(),
+                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
+                    child: Text(
+                      "Andyu´s Shop",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   Container(
-                    child: TextField(),
-                  ),
-                  Container(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        print(_nameCtrl.text);
-                        Get.to(ThirdHome());
-                      },
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold),
-                      ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          child: TextField(
+                            controller: _emailCtrl,
+                            obscureText: false,
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: "Email Address",
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          child: TextField(
+                            controller: _passwordCtrl,
+                            obscureText: true,
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: "Password"),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              print(_emailCtrl.text);
+                              print(_passwordCtrl);
+                              Get.to(ThirdHome());
+                            },
+                            style: ElevatedButton.styleFrom(
+                                minimumSize: Size(double.infinity, 50)),
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -87,9 +110,34 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Create New Account",
                         style: TextStyle(
                             color: Colors.blue[400],
-                            fontSize: 10,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(15),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 10),
+                          child: Icon(
+                            Icons.facebook_rounded,
+                            size: 35,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: Icon(
+                            Icons.email_rounded,
+                            size: 35,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
