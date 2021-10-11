@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class FifthAddAddress extends StatefulWidget {
-  const FifthAddAddress({Key? key}) : super(key: key);
+class AddAddressScreen extends StatefulWidget {
+  const AddAddressScreen({Key? key}) : super(key: key);
   @override
-  _FifthAddAddressState createState() => _FifthAddAddressState();
+  _AddAddressScreenState createState() => _AddAddressScreenState();
 }
 
-class _FifthAddAddressState extends State<FifthAddAddress> {
+class _AddAddressScreenState extends State<AddAddressScreen> {
   TextEditingController _tagPlace = TextEditingController(text: "Office");
   TextEditingController _namePlace =
       TextEditingController(text: "The Ksquare Group");

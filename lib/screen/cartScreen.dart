@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class FourthCartScreen extends StatefulWidget {
-  const FourthCartScreen({Key? key}) : super(key: key);
+class CartScreen extends StatefulWidget {
+  const CartScreen({Key? key}) : super(key: key);
   @override
-  _FourthCartScreenState createState() => _FourthCartScreenState();
+  _CartScreenState createState() => _CartScreenState();
 }
 
-class _FourthCartScreenState extends State<FourthCartScreen> {
+class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

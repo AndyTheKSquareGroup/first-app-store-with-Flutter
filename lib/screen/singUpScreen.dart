@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thirdactivity/screen/1login.dart';
-import 'package:thirdactivity/screen/3home.dart';
+import 'package:thirdactivity/screen/loginScreen.dart';
 
-class FirstEditProfile extends StatefulWidget {
-  const FirstEditProfile({Key? key}) : super(key: key);
+class CreateAccountScreen extends StatefulWidget {
+  const CreateAccountScreen({Key? key}) : super(key: key);
   @override
-  _FirstEditProfileState createState() => _FirstEditProfileState();
+  _CreateAccountScreenState createState() => _CreateAccountScreenState();
 }
 
-class _FirstEditProfileState extends State<FirstEditProfile> {
-  TextEditingController _nameUser = TextEditingController(text: "Andy KT");
-  TextEditingController _emailCtrl =
-      TextEditingController(text: "uriel@theksquaregroup.com");
-  TextEditingController _mobileCtrl = TextEditingController(text: "9832371920");
-
+class _CreateAccountScreenState extends State<CreateAccountScreen> {
+  TextEditingController _emailCtrl = TextEditingController();
+  TextEditingController _passwordCtrl = TextEditingController();
+  TextEditingController _nameUser = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +20,7 @@ class _FirstEditProfileState extends State<FirstEditProfile> {
         backgroundColor: Colors.blue[400],
         elevation: 0,
         title: Text(
-          "Edit Profile",
+          "Create New Account",
           // style: TextStyle(color: Colors.blue[400]),
         ),
         centerTitle: false,
@@ -37,11 +34,18 @@ class _FirstEditProfileState extends State<FirstEditProfile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.all(25),
-                  height: 150,
-                  width: 150,
-                  child: CircleAvatar(
-                      backgroundImage: AssetImage("images/profile.jfif")),
+                  child: Icon(
+                    Icons.shopping_bag_outlined,
+                    size: 150,
+                    color: Colors.blue[400],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
+                  child: Text(
+                    "Andyu´s Shop",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 Container(
                   child: Column(
@@ -75,12 +79,12 @@ class _FirstEditProfileState extends State<FirstEditProfile> {
                       Container(
                         padding: EdgeInsets.all(5),
                         child: TextField(
-                          controller: _mobileCtrl,
-                          obscureText: false,
-                          keyboardType: TextInputType.number,
+                          controller: _passwordCtrl,
+                          obscureText: true,
+                          keyboardType: TextInputType.text,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: "Mobile Number"),
+                              labelText: "Password"),
                         ),
                       ),
                       Container(
@@ -88,14 +92,14 @@ class _FirstEditProfileState extends State<FirstEditProfile> {
                         child: ElevatedButton(
                           onPressed: () {
                             print(_emailCtrl.text);
-                            print(_mobileCtrl);
+                            print(_passwordCtrl);
                             print(_nameUser);
-                            Get.to(ThirdHome());
+                            Get.to(LoginScreen());
                           },
                           style: ElevatedButton.styleFrom(
                               minimumSize: Size(double.infinity, 50)),
                           child: Text(
-                            "Save Changes",
+                            "Register",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -112,12 +116,37 @@ class _FirstEditProfileState extends State<FirstEditProfile> {
                       Get.to(LoginScreen());
                     },
                     child: Text(
-                      "Logout",
+                      "Already Have Account",
                       style: TextStyle(
                           color: Colors.blue[400],
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(15),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 10),
+                        child: Icon(
+                          Icons.facebook_rounded,
+                          size: 35,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Icon(
+                          Icons.email_rounded,
+                          size: 35,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

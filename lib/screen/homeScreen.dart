@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thirdactivity/screen/3modelHome.dart';
-import 'package:thirdactivity/screen/4cart.dart';
-import 'package:thirdactivity/screen/5account.dart';
+import 'package:thirdactivity/screen/modelHomeScreen.dart';
+import 'package:thirdactivity/screen/cartScreen.dart';
+import 'package:thirdactivity/screen/infoAccountScreen.dart';
 
-class ThirdHome extends StatefulWidget {
-  const ThirdHome({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
   @override
-  _ThirdHomeState createState() => _ThirdHomeState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _ThirdHomeState extends State<ThirdHome> {
+class _HomeScreenState extends State<HomeScreen> {
   var _selectedIndex = 0;
   List<Widget> _widgetNavBar = <Widget>[
-    ThirdHomeModel(),
-    FourthCartScreen(),
-    FifthAccountScreen()
+    HomeModelScreen(),
+    CartScreen(),
+    AccountScreen()
   ];
   void _tapNavBar(var index) {
     setState(() {

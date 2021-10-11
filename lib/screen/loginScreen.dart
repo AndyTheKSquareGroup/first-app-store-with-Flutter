@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thirdactivity/screen/2signup.dart';
-import 'package:thirdactivity/screen/3home.dart';
+import 'package:thirdactivity/screen/singUpScreen.dart';
+import 'package:thirdactivity/screen/homeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             onPressed: () {
                               print(_emailCtrl.text);
                               print(_passwordCtrl);
-                              Get.to(ThirdHome());
+                              Get.to(HomeScreen());
                             },
                             style: ElevatedButton.styleFrom(
                                 minimumSize: Size(double.infinity, 50)),
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     child: TextButton(
                       onPressed: () {
-                        Get.to(TwoCreateAccount());
+                        Get.to(CreateAccountScreen());
                       },
                       child: Text(
                         "Create New Account",

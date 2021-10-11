@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thirdactivity/screen/accountfolder/1editProfile.dart';
-import 'package:thirdactivity/screen/accountfolder/1orders.dart';
-import 'package:thirdactivity/screen/accountfolder/3address.dart';
+import 'package:thirdactivity/screen/accountfolder/editProfileScreen.dart';
+import 'package:thirdactivity/screen/accountfolder/ordersScreen.dart';
+import 'package:thirdactivity/screen/accountfolder/addressScreen.dart';
 
-class FifthAccountScreen extends StatefulWidget {
-  const FifthAccountScreen({Key? key}) : super(key: key);
+class AccountScreen extends StatefulWidget {
+  const AccountScreen({Key? key}) : super(key: key);
   @override
-  _FifthAccountScreenState createState() => _FifthAccountScreenState();
+  _AccountScreenState createState() => _AccountScreenState();
 }
 
-class _FifthAccountScreenState extends State<FifthAccountScreen> {
+class _AccountScreenState extends State<AccountScreen> {
   var isSwitched = true;
   @override
   Widget build(BuildContext context) {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ThirdHomeModel extends StatefulWidget {
-  const ThirdHomeModel({Key? key}) : super(key: key);
+class HomeModelScreen extends StatefulWidget {
+  const HomeModelScreen({Key? key}) : super(key: key);
   @override
-  _ThirdHomeModelState createState() => _ThirdHomeModelState();
+  _HomeModelScreenState createState() => _HomeModelScreenState();
 }
 
-class _ThirdHomeModelState extends State<ThirdHomeModel> {
+class _HomeModelScreenState extends State<HomeModelScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

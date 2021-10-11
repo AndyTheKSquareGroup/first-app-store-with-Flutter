@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thirdactivity/screen/5addAddress.dart';
-import 'package:thirdactivity/screen/accountfolder/4addeditaddress.dart';
+import 'package:thirdactivity/screen/addAddressScreen.dart';
+import 'package:thirdactivity/screen/accountfolder/editAddressScreen.dart';
 
 class ThirdManageAddress extends StatefulWidget {
   const ThirdManageAddress({Key? key}) : super(key: key);
@@ -187,7 +187,7 @@ class _ThirdManageAddressState extends State<ThirdManageAddress> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.to(FifthAddAddress());
+          Get.to(AddAddressScreen());
         },
         child: Icon(
           Icons.add_circle_sharp,

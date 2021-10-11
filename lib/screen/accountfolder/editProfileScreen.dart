@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:thirdactivity/screen/1login.dart';
+import 'package:thirdactivity/screen/loginScreen.dart';
+import 'package:thirdactivity/screen/homeScreen.dart';
 
-class TwoCreateAccount extends StatefulWidget {
-  const TwoCreateAccount({Key? key}) : super(key: key);
+class FirstEditProfile extends StatefulWidget {
+  const FirstEditProfile({Key? key}) : super(key: key);
   @override
-  _TwoCreateAccountState createState() => _TwoCreateAccountState();
+  _FirstEditProfileState createState() => _FirstEditProfileState();
 }
 
-class _TwoCreateAccountState extends State<TwoCreateAccount> {
-  TextEditingController _emailCtrl = TextEditingController();
-  TextEditingController _passwordCtrl = TextEditingController();
-  TextEditingController _nameUser = TextEditingController();
+class _FirstEditProfileState extends State<FirstEditProfile> {
+  TextEditingController _nameUser = TextEditingController(text: "Andy KT");
+  TextEditingController _emailCtrl =
+      TextEditingController(text: "uriel@theksquaregroup.com");
+  TextEditingController _mobileCtrl = TextEditingController(text: "9832371920");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +23,7 @@ class _TwoCreateAccountState extends State<TwoCreateAccount> {
         backgroundColor: Colors.blue[400],
         elevation: 0,
         title: Text(
-          "Create New Account",
+          "Edit Profile",
           // style: TextStyle(color: Colors.blue[400]),
         ),
         centerTitle: false,
@@ -34,18 +37,11 @@ class _TwoCreateAccountState extends State<TwoCreateAccount> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  child: Icon(
-                    Icons.shopping_bag_outlined,
-                    size: 150,
-                    color: Colors.blue[400],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 0),
-                  child: Text(
-                    "Andyu´s Shop",
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
+                  margin: EdgeInsets.all(25),
+                  height: 150,
+                  width: 150,
+                  child: CircleAvatar(
+                      backgroundImage: AssetImage("images/profile.jfif")),
                 ),
                 Container(
                   child: Column(
@@ -79,12 +75,12 @@ class _TwoCreateAccountState extends State<TwoCreateAccount> {
                       Container(
                         padding: EdgeInsets.all(5),
                         child: TextField(
-                          controller: _passwordCtrl,
-                          obscureText: true,
-                          keyboardType: TextInputType.text,
+                          controller: _mobileCtrl,
+                          obscureText: false,
+                          keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: "Password"),
+                              labelText: "Mobile Number"),
                         ),
                       ),
                       Container(
@@ -92,14 +88,14 @@ class _TwoCreateAccountState extends State<TwoCreateAccount> {
                         child: ElevatedButton(
                           onPressed: () {
                             print(_emailCtrl.text);
-                            print(_passwordCtrl);
+                            print(_mobileCtrl);
                             print(_nameUser);
-                            Get.to(LoginScreen());
+                            Get.to(HomeScreen());
                           },
                           style: ElevatedButton.styleFrom(
                               minimumSize: Size(double.infinity, 50)),
                           child: Text(
-                            "Register",
+                            "Save Changes",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -116,37 +112,12 @@ class _TwoCreateAccountState extends State<TwoCreateAccount> {
                       Get.to(LoginScreen());
                     },
                     child: Text(
-                      "Already Have Account",
+                      "Logout",
                       style: TextStyle(
                           color: Colors.blue[400],
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(15),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 10),
-                        child: Icon(
-                          Icons.facebook_rounded,
-                          size: 35,
-                          color: Colors.blue,
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 10),
-                        child: Icon(
-                          Icons.email_rounded,
-                          size: 35,
-                          color: Colors.blue,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],
